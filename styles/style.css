@@ -1,0 +1,137 @@
+/* 1. Osnovni reset i font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: hsl(0, 0%, 95%);
+  color: hsl(234, 12%, 34%);
+  font-size: 15px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* 2. Glavni kontejner */
+.container {
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+}
+
+/* 3. Naslovi */
+h1 {
+  font-weight: 600;
+  color: hsl(234, 12%, 34%);
+  margin-top: 0.5rem;
+}
+
+h2 {
+  font-weight: 200;
+  color: hsl(229, 6%, 66%);
+}
+
+/* 4. Opis */
+.description {
+  max-width: 600px;
+  margin: 1rem auto 3rem;
+  color: hsl(229, 6%, 66%);
+}
+
+/* 5. Kartice */
+.supervisor, .team-builder, .karma, .calculator {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  position: relative;
+  margin: 1rem auto;
+  max-width: 350px;
+}
+
+/* 6. Ikonice */
+.icon-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.icon {
+  width: 50px;
+}
+
+/* 7. Bočne linije na vrhu */
+.supervisor {
+  border-top: 5px solid hsl(180, 62%, 55%);
+}
+
+.team-builder {
+  border-top: 5px solid hsl(0, 78%, 62%);
+}
+
+.karma {
+  border-top: 5px solid hsl(34, 97%, 64%);
+}
+
+.calculator {
+  border-top: 5px solid hsl(212, 86%, 64%);
+}
+
+/* 8. Grid raspored za desktop */
+@media (min-width: 900px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .supervisor {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .team-builder {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .karma {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .calculator {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+  }
+
+  .container > div:first-child,
+  .description {
+    grid-column: 1 / -1;
+  }
+
+  .container > div:first-child {
+    margin-bottom: 1rem;
+  }
+}
+
+/* 9. Footer */
+footer {
+  margin-top: 3rem;
+  font-size: 13px;
+  text-align: center;
+}
+
+footer a {
+  color: hsl(228, 45%, 44%);
+}
